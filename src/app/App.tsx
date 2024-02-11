@@ -1,12 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './style/index.scss'
-import About from './pages/About/About';
-import Main from './pages/Main/Main';
+import About from 'pages/About/ui/About';
+import Main from 'pages/Main/ui/Main';
 import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import { Theme, ThemeContext } from './theme/ThemeContext';
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/classNames';
+import { classNames } from 'shared/config/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 
 const App = () => {
     const {theme, toggleTheme} = useTheme();
@@ -24,7 +22,6 @@ const App = () => {
                 <Route path={'/about'} element={<About />}/>
                 <Route path={'/'}  element={<Main />}/>
             </Routes>
-            hiivccvcvxvx
         </div>
     )
 }
