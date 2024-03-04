@@ -5,23 +5,17 @@ import Main from 'pages/Main/ui/Main';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/config/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { AppRouter } from './providers/router';
+import { Navbar } from 'widgets/Navbar';
 
 const App = () => {
     const {theme, toggleTheme} = useTheme();
     
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Link to={'/'}>
-                Main
-            </Link>
-            <Link to={'/about'}>
-                About
-            </Link>
+            <Navbar />
             <button onClick={toggleTheme}>click</button>
-            <Routes>
-                <Route path={'/about'} element={<About />}/>
-                <Route path={'/'}  element={<Main />}/>
-            </Routes>
+            <AppRouter />
         </div>
     )
 }
